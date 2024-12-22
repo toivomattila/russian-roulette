@@ -70,25 +70,22 @@ class RussianRoulette {
         
         // Reset bullet position and state
         this.bulletEl.style.transition = 'none';
-        this.bulletEl.style.transform = '';
+        this.bulletEl.style.transform = 'translate(-50px, 100px)';
         this.bulletEl.style.opacity = '0';
         this.bulletEl.classList.remove('bullet-loading', 'bullet-loaded');
         
         // Force reflow to ensure transition reset takes effect
         this.bulletEl.offsetHeight;
         
-        // Restore transition
+        // Restore transition and show bullet
         this.bulletEl.style.transition = 'transform 0.5s ease-in-out, opacity 0.3s ease-in-out';
-        
-        // Show bullet loading animation
-        this.bulletEl.style.transform = 'translate(50px, 100px)';
-        this.bulletEl.classList.add('bullet-loading');
+        this.bulletEl.style.opacity = '1';
         
         // Wait for bullet to appear
         await new Promise(resolve => setTimeout(resolve, 300));
         
         // Move bullet to chamber
-        this.bulletEl.classList.add('bullet-loaded');
+        this.bulletEl.style.transform = 'translate(100px, 35px)';
         
         // Wait for bullet to move
         await new Promise(resolve => setTimeout(resolve, 500));

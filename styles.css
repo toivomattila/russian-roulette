@@ -181,16 +181,6 @@ h1 {
     mix-blend-mode: soft-light;
 }
 
-/* Animation classes */
-.bullet-loading {
-    opacity: 1;
-}
-
-.bullet-loaded {
-    opacity: 1;
-    transform: translate(100px, 35px);
-}
-
 .controls {
     margin: 2rem 0;
 }

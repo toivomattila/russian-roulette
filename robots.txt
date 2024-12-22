@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://github.com/toivomattila/russian-roulette/sitemap.xml
+
+# Allow all robots complete access
+# This is a simple game website with no private content to protect 

@@ -2,6 +2,8 @@
 
 A web-based implementation of Russian Roulette using HTML, CSS, and JavaScript. The game features a realistic revolver chamber visualization with animations and sound effects.
 
+🎮 **[Play the Game](https://russian-roulette.online)**
+
 ## Features
 
 - Interactive revolver chamber visualization using SVG
@@ -19,13 +21,14 @@ A web-based implementation of Russian Roulette using HTML, CSS, and JavaScript. 
 
 ## How to Play
 
-1. Click "Load & Spin Chamber" to start the game
+1. Visit [russian-roulette.online](https://russian-roulette.online) or run locally
+2. Click "Load & Spin Chamber" to start the game
    - This will load a bullet into a random chamber position
    - The chamber will spin with animation and sound effects
-2. Once the chamber stops spinning, click "Pull Trigger" to test your luck
+3. Once the chamber stops spinning, click "Pull Trigger" to test your luck
    - If the chamber is empty, you survive and can continue
    - If you hit the loaded chamber, game over!
-3. Click "Play Again" to restart the game at any time
+4. Click "Play Again" to restart the game at any time
 
 ## Technical Details
 
@@ -44,10 +47,12 @@ russian-roulette/
 ├── gunshot.mp3        # Fatal shot sound
 ├── empty-gun-shot.wav # Empty chamber sound
 ├── revolver-chamber-spin-ratchet-sound.mp3    # Spinning sound
-└── revolver-ejecting-bullets-from-cylinder.wav # Reload sound
+├── revolver-ejecting-bullets-from-cylinder.wav # Reload sound
+├── sitemap.xml        # XML sitemap for search engines
+└── robots.txt         # Search engine crawling rules
 ```
 
-## Running the Game
+## Running Locally
 
 1. Clone the repository:
 ```bash
@@ -57,6 +62,10 @@ git clone https://github.com/toivomattila/russian-roulette.git
 2. Open `index.html` in a modern web browser
 
 Note: The game requires a browser that supports HTML5 audio and modern JavaScript features.
+
+## Deployment
+
+The game is deployed at [russian-roulette.online](https://russian-roulette.online) using static hosting.
 
 ## Browser Compatibility
 

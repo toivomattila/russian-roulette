@@ -30,6 +30,19 @@ A web-based implementation of Russian Roulette using HTML, CSS, and JavaScript. 
    - If you hit the loaded chamber, game over!
 4. Click "Play Again" to restart the game at any time
 
+## Requirements
+
+### Browser Support
+The game works best in modern browsers that support:
+- ES6+ JavaScript
+- HTML5 Audio
+- CSS3 Transforms and Transitions
+- SVG
+
+### SEO Files
+- `robots.txt` - Directs search engine crawlers and points to the sitemap
+- `sitemap.xml` - Lists all pages for search engine indexing
+
 ## Technical Details
 
 The game is built using:
@@ -47,9 +60,7 @@ russian-roulette/
 ├── gunshot.mp3        # Fatal shot sound
 ├── empty-gun-shot.wav # Empty chamber sound
 ├── revolver-chamber-spin-ratchet-sound.mp3    # Spinning sound
-├── revolver-ejecting-bullets-from-cylinder.wav # Reload sound
-├── sitemap.xml        # XML sitemap for search engines
-└── robots.txt         # Search engine crawling rules
+└── revolver-ejecting-bullets-from-cylinder.wav # Reload sound
 ```
 
 ## Running Locally
@@ -66,14 +77,6 @@ Note: The game requires a browser that supports HTML5 audio and modern JavaScrip
 ## Deployment
 
 The game is deployed at [russian-roulette.online](https://russian-roulette.online) using static hosting.
-
-## Browser Compatibility
-
-The game works best in modern browsers that support:
-- ES6+ JavaScript
-- HTML5 Audio
-- CSS3 Transforms and Transitions
-- SVG
 
 ## License
 

@@ -15,6 +15,9 @@ class RussianRoulette {
         this.gameOverEl = document.getElementById('gameOver');
         this.shotCountEl = document.getElementById('shotCount');
         this.surviveCountEl = document.getElementById('surviveCount');
+        this.helpBtn = document.getElementById('helpBtn');
+        this.helpModal = document.getElementById('helpModal');
+        this.closeBtn = document.querySelector('.close-button');
 
         // Audio elements
         this.reloadSound = document.getElementById('reloadSound');
@@ -26,6 +29,9 @@ class RussianRoulette {
         this.spinBtn.addEventListener('click', () => this.spinChamber());
         this.shootBtn.addEventListener('click', () => this.shoot());
         this.restartBtn.addEventListener('click', () => this.restart());
+        this.helpBtn.addEventListener('click', () => this.showHelp());
+        this.closeBtn.addEventListener('click', () => this.hideHelp());
+        window.addEventListener('click', (e) => this.handleOutsideClick(e));
 
         // Handle animation end
         this.chamberEl.addEventListener('transitionend', () => {
@@ -37,6 +43,25 @@ class RussianRoulette {
             'event_category': 'game',
             'event_label': 'Game Started'
         });
+    }
+
+    showHelp() {
+        this.helpModal.classList.remove('hidden');
+        // Track help view
+        gtag('event', 'view_help', {
+            'event_category': 'game',
+            'event_label': 'Help Viewed'
+        });
+    }
+
+    hideHelp() {
+        this.helpModal.classList.add('hidden');
+    }
+
+    handleOutsideClick(event) {
+        if (event.target === this.helpModal) {
+            this.hideHelp();
+        }
     }
 
     async spinChamber() {

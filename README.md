@@ -20,6 +20,11 @@ A web-based implementation of Russian Roulette using HTML, CSS, and JavaScript. 
   - Game rules explanation
   - Probability calculations
   - Strategy tips
+- Social sharing features:
+  - Twitter sharing with score
+  - Facebook sharing integration
+  - Custom share messages
+  - Social media analytics
 - Responsive design with a dark theme
 - Simple and intuitive controls
 - Progressive Web App (PWA) support
@@ -87,7 +92,28 @@ The game is built using:
 - CSS3 for styling and animations
 - JavaScript (ES6+) for game logic
 - SVG for chamber visualization
+- Web Share API for social integration
 - Google Analytics for event tracking
+
+### Social Integration
+- Twitter sharing with custom messages and score
+- Facebook sharing with Open Graph meta tags
+- Analytics tracking for share events
+- Automatic score inclusion in shares
+- Platform-specific optimizations
+
+### Analytics Events
+The game tracks various events to improve user experience:
+- Game starts
+- Chamber spins
+- Successful shots
+- Game over events
+- Game restarts
+- Help section views
+- Social shares:
+  - Share button clicks
+  - Platform selection
+  - Score sharing
 
 ### File Structure
 ```

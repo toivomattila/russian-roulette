@@ -16,6 +16,10 @@ A web-based implementation of Russian Roulette using HTML, CSS, and JavaScript. 
 - Game statistics tracking:
   - Total shots taken
   - Successful survival shots
+- Interactive help section with:
+  - Game rules explanation
+  - Probability calculations
+  - Strategy tips
 - Responsive design with a dark theme
 - Simple and intuitive controls
 - Progressive Web App (PWA) support
@@ -25,13 +29,33 @@ A web-based implementation of Russian Roulette using HTML, CSS, and JavaScript. 
 ## How to Play
 
 1. Visit [russian-roulette.online](https://russian-roulette.online) or run locally
-2. Click "Load & Spin Chamber" to start the game
+2. Click the "How to Play" button to learn the rules and probabilities
+3. Click "Load & Spin Chamber" to start the game
    - This will load a bullet into a random chamber position
    - The chamber will spin with animation and sound effects
-3. Once the chamber stops spinning, click "Pull Trigger" to test your luck
+4. Once the chamber stops spinning, click "Pull Trigger" to test your luck
    - If the chamber is empty, you survive and can continue
    - If you hit the loaded chamber, game over!
-4. Click "Play Again" to restart the game at any time
+5. Click "Play Again" to restart the game at any time
+
+## Game Mechanics
+
+### Rules
+- The game simulates a six-chamber revolver with one bullet
+- Each trigger pull rotates the chamber to the next position
+- Surviving a shot means the current chamber was empty
+- Hitting the loaded chamber ends the game
+
+### Probabilities
+- Initial shot: 5/6 chance of survival (83.33%)
+- Second shot: 4/5 chance (80%)
+- Third shot: 3/4 chance (75%)
+- Fourth shot: 2/3 chance (66.67%)
+- Fifth shot: 1/2 chance (50%)
+- Final shot: 0% chance of survival
+
+### Strategy
+Consider restarting the game after surviving a few shots to maintain better odds of survival. The probability of survival decreases with each shot.
 
 ## Requirements
 
@@ -106,6 +130,7 @@ The game tracks various events to improve user experience:
 - Successful shots
 - Game over events
 - Game restarts
+- Help section views
 
 All tracking is anonymous and complies with privacy standards.
 

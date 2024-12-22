@@ -198,5 +198,39 @@ class RussianRoulette {
     }
 }
 
+function shareOnTwitter() {
+    const text = `I survived ${game.surviveCount} shots in Russian Roulette! Can you beat my score?`;
+    const url = 'https://russian-roulette.online';
+    const hashtags = 'RussianRoulette,Game';
+    
+    // Track share event
+    gtag('event', 'share', {
+        'event_category': 'social',
+        'event_label': 'Twitter Share',
+        'value': game.surviveCount
+    });
+    
+    window.open(
+        `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}&hashtags=${encodeURIComponent(hashtags)}`,
+        '_blank'
+    );
+}
+
+function shareOnFacebook() {
+    const url = 'https://russian-roulette.online';
+    
+    // Track share event
+    gtag('event', 'share', {
+        'event_category': 'social',
+        'event_label': 'Facebook Share',
+        'value': game.surviveCount
+    });
+    
+    window.open(
+        `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+        '_blank'
+    );
+}
+
 // Initialize the game
 const game = new RussianRoulette(); 

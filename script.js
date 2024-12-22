@@ -16,6 +16,12 @@ class RussianRoulette {
         this.shotCountEl = document.getElementById('shotCount');
         this.surviveCountEl = document.getElementById('surviveCount');
 
+        // Audio elements
+        this.reloadSound = document.getElementById('reloadSound');
+        this.spinSound = document.getElementById('spinSound');
+        this.emptyShootSound = document.getElementById('emptyShootSound');
+        this.gunshotSound = document.getElementById('gunshotSound');
+
         // Bind event listeners
         this.spinBtn.addEventListener('click', () => this.spinChamber());
         this.shootBtn.addEventListener('click', () => this.shoot());
@@ -27,9 +33,21 @@ class RussianRoulette {
         });
     }
 
-    spinChamber() {
+    async spinChamber() {
         this.chamber = Math.floor(Math.random() * 6);
         this.currentPosition = 0;
+        
+        // Play reload sound first
+        this.reloadSound.currentTime = 0;
+        await this.reloadSound.play();
+        
+        // Wait for reload sound to finish
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        // Play spin sound and start animation
+        this.spinSound.currentTime = 0;
+        this.spinSound.play();
+        
         this.currentRotation += 2160; // 6 full rotations
         this.chamberEl.style.transition = 'transform 3s cubic-bezier(0.4, 2, 0.2, 1)';
         this.chamberEl.style.transform = `rotate(${this.currentRotation}deg)`;
@@ -46,8 +64,14 @@ class RussianRoulette {
         this.chamberEl.style.transform = `rotate(${this.currentRotation}deg)`;
 
         if (this.currentPosition === this.chamber) {
+            // Play gunshot sound for loaded chamber
+            this.gunshotSound.currentTime = 0;
+            this.gunshotSound.play();
             setTimeout(() => this.gameOver(), 500);
         } else {
+            // Play empty chamber sound
+            this.emptyShootSound.currentTime = 0;
+            this.emptyShootSound.play();
             this.surviveCount++;
             this.surviveCountEl.textContent = this.surviveCount;
         }

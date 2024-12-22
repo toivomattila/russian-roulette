@@ -138,6 +138,51 @@ All tracking is anonymous and complies with privacy standards.
 
 The game is deployed at [russian-roulette.online](https://russian-roulette.online) using static hosting.
 
+## Improvement Ideas
+
+### Gameplay Enhancements
+- High score system with local storage
+- Multiple game modes:
+  - Two-player mode (taking turns)
+  - Time trial mode (most survivals in 60 seconds)
+  - Challenge mode (survive specific patterns)
+- Achievement system for milestones
+- Streak counter for consecutive survivals
+
+### Visual Improvements
+- Bullet visualization in chamber
+- Muzzle flash animation on shots
+- Blood splatter effect on game over
+- Smoke effects after shots
+- More detailed revolver graphics
+- Dark/light theme toggle
+
+### Audio Enhancements
+- Background ambient music
+- Volume controls for sound effects
+- Additional sound effects:
+  - Chamber clicking sounds
+  - Dramatic tension music
+  - Victory/defeat jingles
+
+### Technical Features
+- Service worker for complete offline support
+- Save game state between sessions
+- Share buttons for social media
+- Keyboard controls (spacebar for shooting)
+- Touch gesture support for mobile
+- Multiplayer support via WebSocket
+
+### User Experience
+- Tutorial walkthrough for first-time players
+- Statistics dashboard with graphs
+- Personal best records
+- Daily challenges
+- Customizable chamber colors
+- Accessibility improvements
+
+Feel free to contribute to any of these improvements or suggest new ones via pull requests!
+
 ## License
 
 This project is open source and available under the MIT License. 

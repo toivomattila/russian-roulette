@@ -68,6 +68,18 @@ class RussianRoulette {
     async loadAndSpin() {
         this.spinBtn.disabled = true;
         
+        // Reset bullet position and state
+        this.bulletEl.style.transition = 'none';
+        this.bulletEl.style.transform = '';
+        this.bulletEl.style.opacity = '0';
+        this.bulletEl.classList.remove('bullet-loading', 'bullet-loaded');
+        
+        // Force reflow to ensure transition reset takes effect
+        this.bulletEl.offsetHeight;
+        
+        // Restore transition
+        this.bulletEl.style.transition = 'transform 0.5s ease-in-out, opacity 0.3s ease-in-out';
+        
         // Show bullet loading animation
         this.bulletEl.style.transform = 'translate(50px, 100px)';
         this.bulletEl.classList.add('bullet-loading');
@@ -89,7 +101,7 @@ class RussianRoulette {
         await new Promise(resolve => setTimeout(resolve, 1000));
         
         // Hide bullet and spin chamber
-        this.bulletEl.style.opacity = 0;
+        this.bulletEl.style.opacity = '0';
         await this.spinChamber();
     }
 
@@ -182,10 +194,11 @@ class RussianRoulette {
         this.shootBtn.disabled = true;
         this.chamberEl.style.transform = 'rotate(0deg)';
         
-        // Reset bullet
+        // Reset bullet without animation
+        this.bulletEl.style.transition = 'none';
         this.bulletEl.style.transform = '';
+        this.bulletEl.style.opacity = '0';
         this.bulletEl.classList.remove('bullet-loading', 'bullet-loaded');
-        this.bulletEl.style.opacity = 0;
     }
 }
 

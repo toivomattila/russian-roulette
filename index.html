@@ -15,20 +15,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Primary Meta Tags -->
-    <title>Russian Roulette Game - Test Your Luck</title>
-    <meta name="title" content="Russian Roulette Game - Test Your Luck">
-    <meta name="description" content="Play Russian Roulette online with realistic revolver chamber animations and sound effects. A thrilling game of chance with authentic gun mechanics.">
-    <meta name="keywords" content="russian roulette, online game, revolver game, chamber game, luck game, play online, no download, browser game">
+    <title>Russian Roulette Online Game | Free Browser Game | No Download</title>
+    <meta name="title" content="Russian Roulette Online Game | Free Browser Game | No Download">
+    <meta name="description" content="Experience the thrill of Russian Roulette online with stunning 3D graphics, realistic sound effects, and authentic revolver mechanics. Free to play, no download required. Test your luck and survival skills!">
+    <meta name="keywords" content="russian roulette game, online russian roulette, free browser game, chance game, probability game, revolver game, no download game, survival game, luck game, browser-based game">
     <meta name="author" content="Toivo Mattila">
+    <link rel="canonical" href="https://russian-roulette.online/" />
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
 
     <!-- PWA Support -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#2a2a2a">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Roulette">
+    <meta name="application-name" content="Russian Roulette Game">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Roulette">
+    <meta name="apple-mobile-web-app-title" content="Russian Roulette Game">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -40,188 +43,230 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://russian-roulette.online/">
-    <meta property="og:title" content="Russian Roulette Game - Test Your Luck">
-    <meta property="og:description" content="Play Russian Roulette online with realistic revolver chamber animations and sound effects. A thrilling game of chance with authentic gun mechanics.">
+    <meta property="og:title" content="Russian Roulette Online Game - Free Browser Game">
+    <meta property="og:description" content="Experience the thrill of Russian Roulette online with stunning 3D graphics, realistic sound effects, and authentic revolver mechanics. Free to play, no download required!">
     <meta property="og:image" content="https://russian-roulette.online/preview.jpg">
+    <meta property="og:image:alt" content="Russian Roulette Game Preview">
+    <meta property="og:site_name" content="Russian Roulette Online">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://russian-roulette.online/">
-    <meta property="twitter:title" content="Russian Roulette Game - Test Your Luck">
-    <meta property="twitter:description" content="Play Russian Roulette online with realistic revolver chamber animations and sound effects. A thrilling game of chance with authentic gun mechanics.">
+    <meta property="twitter:title" content="Russian Roulette Online Game - Free Browser Game">
+    <meta property="twitter:description" content="Experience the thrill of Russian Roulette online with stunning 3D graphics, realistic sound effects, and authentic revolver mechanics. Free to play, no download required!">
     <meta property="twitter:image" content="https://russian-roulette.online/preview.jpg">
+    <meta property="twitter:image:alt" content="Russian Roulette Game Preview">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Russian Roulette Online Game",
+        "url": "https://russian-roulette.online",
+        "description": "Experience the thrill of Russian Roulette online with stunning 3D graphics, realistic sound effects, and authentic revolver mechanics.",
+        "applicationCategory": "Game",
+        "genre": "Chance Game",
+        "browserRequirements": "Requires JavaScript",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Toivo Mattila"
+        },
+        "screenshot": "https://russian-roulette.online/preview.jpg",
+        "inLanguage": "en-US",
+        "operatingSystem": "Any"
+    }
+    </script>
     
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="game-container">
-        <h1>Russian Roulette</h1>
-        <div class="help-section">
-            <button id="helpBtn" class="help-button">How to Play</button>
-            <div id="helpModal" class="modal hidden">
-                <div class="modal-content">
-                    <span class="close-button">&times;</span>
-                    <h2>How to Play Russian Roulette</h2>
-                    
-                    <section class="rules">
-                        <h3>Game Rules</h3>
-                        <ul>
-                            <li>The game uses a six-chamber revolver with one bullet</li>
-                            <li>Click "Load & Spin Chamber" to randomly place the bullet</li>
-                            <li>Click "Pull Trigger" to test your luck</li>
-                            <li>If you survive, you can continue or restart</li>
-                            <li>If you hit the loaded chamber, game over!</li>
-                        </ul>
-                    </section>
+    <header>
+        <h1>Russian Roulette Online Game</h1>
+    </header>
+    <main class="game-container">
+        <section class="game-section">
+            <h2 class="visually-hidden">Game Interface</h2>
+            <div class="help-section">
+                <button id="helpBtn" class="help-button" aria-label="Show game instructions">How to Play</button>
+                <div id="helpModal" class="modal hidden" role="dialog" aria-labelledby="helpTitle">
+                    <div class="modal-content">
+                        <span class="close-button" aria-label="Close instructions">&times;</span>
+                        <h2 id="helpTitle">How to Play Russian Roulette</h2>
+                        
+                        <section class="rules">
+                            <h3>Game Rules</h3>
+                            <ul>
+                                <li>The game uses a six-chamber revolver with one bullet</li>
+                                <li>Click "Load & Spin Chamber" to randomly place the bullet</li>
+                                <li>Click "Pull Trigger" to test your luck</li>
+                                <li>If you survive, you can continue or restart</li>
+                                <li>If you hit the loaded chamber, game over!</li>
+                            </ul>
+                        </section>
 
-                    <section class="probabilities">
-                        <h3>Probabilities</h3>
-                        <ul>
-                            <li>Initial chance of survival: 5/6 (83.33%)</li>
-                            <li>Second shot: 4/5 (80%)</li>
-                            <li>Third shot: 3/4 (75%)</li>
-                            <li>Fourth shot: 2/3 (66.67%)</li>
-                            <li>Fifth shot: 1/2 (50%)</li>
-                            <li>Final shot: 0% chance of survival</li>
-                        </ul>
-                    </section>
+                        <section class="probabilities">
+                            <h3>Probabilities</h3>
+                            <ul>
+                                <li>Initial chance of survival: 5/6 (83.33%)</li>
+                                <li>Second shot: 4/5 (80%)</li>
+                                <li>Third shot: 3/4 (75%)</li>
+                                <li>Fourth shot: 2/3 (66.67%)</li>
+                                <li>Fifth shot: 1/2 (50%)</li>
+                                <li>Final shot: 0% chance of survival</li>
+                            </ul>
+                        </section>
 
-                    <section class="strategy">
-                        <h3>Strategy</h3>
-                        <p>Each shot decreases your survival probability. Consider restarting after surviving a few shots to maintain better odds!</p>
-                    </section>
+                        <section class="strategy">
+                            <h3>Strategy</h3>
+                            <p>Each shot decreases your survival probability. Consider restarting after surviving a few shots to maintain better odds!</p>
+                        </section>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="chamber-container">
-            <svg class="chamber" viewBox="-50 0 300 200">
-                <defs>
-                    <!-- Main chamber body gradient -->
-                    <radialGradient id="chamberGradient" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" style="stop-color:#555" />
-                        <stop offset="75%" style="stop-color:#444" />
-                        <stop offset="100%" style="stop-color:#333" />
-                    </radialGradient>
+            <div class="chamber-container" role="img" aria-label="Interactive revolver chamber">
+                <svg class="chamber" viewBox="-50 0 300 200">
+                    <defs>
+                        <!-- Main chamber body gradient -->
+                        <radialGradient id="chamberGradient" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" style="stop-color:#555" />
+                            <stop offset="75%" style="stop-color:#444" />
+                            <stop offset="100%" style="stop-color:#333" />
+                        </radialGradient>
 
-                    <!-- Bullet hole outer rim gradient -->
-                    <radialGradient id="holeRimGradient" cx="50%" cy="50%" r="50%">
-                        <stop offset="60%" style="stop-color:#333" />
-                        <stop offset="100%" style="stop-color:#222" />
-                    </radialGradient>
+                        <!-- Bullet hole outer rim gradient -->
+                        <radialGradient id="holeRimGradient" cx="50%" cy="50%" r="50%">
+                            <stop offset="60%" style="stop-color:#333" />
+                            <stop offset="100%" style="stop-color:#222" />
+                        </radialGradient>
 
-                    <!-- Bullet hole inner gradient -->
-                    <radialGradient id="holeInnerGradient" cx="50%" cy="30%" r="70%">
-                        <stop offset="0%" style="stop-color:#2a2a2a" />
-                        <stop offset="80%" style="stop-color:#1a1a1a" />
-                        <stop offset="100%" style="stop-color:#111" />
-                    </radialGradient>
+                        <!-- Bullet hole inner gradient -->
+                        <radialGradient id="holeInnerGradient" cx="50%" cy="30%" r="70%">
+                            <stop offset="0%" style="stop-color:#2a2a2a" />
+                            <stop offset="80%" style="stop-color:#1a1a1a" />
+                            <stop offset="100%" style="stop-color:#111" />
+                        </radialGradient>
 
-                    <!-- Center pin metallic gradient -->
-                    <radialGradient id="pinGradient" cx="40%" cy="40%" r="60%">
-                        <stop offset="0%" style="stop-color:#888" />
-                        <stop offset="70%" style="stop-color:#777" />
-                        <stop offset="100%" style="stop-color:#666" />
-                    </radialGradient>
+                        <!-- Center pin metallic gradient -->
+                        <radialGradient id="pinGradient" cx="40%" cy="40%" r="60%">
+                            <stop offset="0%" style="stop-color:#888" />
+                            <stop offset="70%" style="stop-color:#777" />
+                            <stop offset="100%" style="stop-color:#666" />
+                        </radialGradient>
 
-                    <!-- Inner shadow filter -->
-                    <filter id="innerShadow" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
-                        <feOffset dx="0" dy="2" />
-                        <feComposite in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowDiff"/>
-                        <feFlood flood-color="#000" flood-opacity="0.75"/>
-                        <feComposite in2="shadowDiff" operator="in"/>
-                        <feComposite in2="SourceGraphic" operator="over"/>
-                    </filter>
+                        <!-- Inner shadow filter -->
+                        <filter id="innerShadow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+                            <feOffset dx="0" dy="2" />
+                            <feComposite in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowDiff"/>
+                            <feFlood flood-color="#000" flood-opacity="0.75"/>
+                            <feComposite in2="shadowDiff" operator="in"/>
+                            <feComposite in2="SourceGraphic" operator="over"/>
+                        </filter>
 
-                    <!-- Bullet gradient -->
-                    <radialGradient id="bulletGradient" cx="40%" cy="40%" r="60%">
-                        <stop offset="0%" style="stop-color:#b87333" />
-                        <stop offset="70%" style="stop-color:#a66321" />
-                        <stop offset="100%" style="stop-color:#955310" />
-                    </radialGradient>
+                        <!-- Bullet gradient -->
+                        <radialGradient id="bulletGradient" cx="40%" cy="40%" r="60%">
+                            <stop offset="0%" style="stop-color:#b87333" />
+                            <stop offset="70%" style="stop-color:#a66321" />
+                            <stop offset="100%" style="stop-color:#955310" />
+                        </radialGradient>
 
-                    <!-- Bullet shine gradient -->
-                    <radialGradient id="bulletShineGradient" cx="30%" cy="30%" r="70%">
-                        <stop offset="0%" style="stop-color:rgba(255,255,255,0.6)" />
-                        <stop offset="50%" style="stop-color:rgba(255,255,255,0)" />
-                    </radialGradient>
-                </defs>
+                        <!-- Bullet shine gradient -->
+                        <radialGradient id="bulletShineGradient" cx="30%" cy="30%" r="70%">
+                            <stop offset="0%" style="stop-color:rgba(255,255,255,0.6)" />
+                            <stop offset="50%" style="stop-color:rgba(255,255,255,0)" />
+                        </radialGradient>
+                    </defs>
 
-                <!-- Main chamber body -->
-                <circle cx="100" cy="100" r="95" class="chamber-body" fill="url(#chamberGradient)" />
-                
-                <!-- Bullet holes with enhanced depth -->
-                <g class="bullet-holes">
-                    <!-- Each bullet hole has an outer rim and inner hole for depth -->
-                    <g class="bullet-hole-group" transform="translate(100,35)">
-                        <circle r="30" fill="url(#holeRimGradient)" class="hole-rim" stroke="none" />
-                        <circle r="25" fill="url(#holeInnerGradient)" class="hole-inner" filter="url(#innerShadow)" stroke="none" />
+                    <!-- Main chamber body -->
+                    <circle cx="100" cy="100" r="95" class="chamber-body" fill="url(#chamberGradient)" />
+                    
+                    <!-- Bullet holes with enhanced depth -->
+                    <g class="bullet-holes">
+                        <!-- Each bullet hole has an outer rim and inner hole for depth -->
+                        <g class="bullet-hole-group" transform="translate(100,35)">
+                            <circle r="30" fill="url(#holeRimGradient)" class="hole-rim" stroke="none" />
+                            <circle r="25" fill="url(#holeInnerGradient)" class="hole-inner" filter="url(#innerShadow)" stroke="none" />
+                        </g>
+                        <g class="bullet-hole-group" transform="translate(155,70)">
+                            <circle r="30" fill="url(#holeRimGradient)" class="hole-rim" stroke="none" />
+                            <circle r="25" fill="url(#holeInnerGradient)" class="hole-inner" filter="url(#innerShadow)" stroke="none" />
+                        </g>
+                        <g class="bullet-hole-group" transform="translate(155,130)">
+                            <circle r="30" fill="url(#holeRimGradient)" class="hole-rim" stroke="none" />
+                            <circle r="25" fill="url(#holeInnerGradient)" class="hole-inner" filter="url(#innerShadow)" stroke="none" />
+                        </g>
+                        <g class="bullet-hole-group" transform="translate(100,165)">
+                            <circle r="30" fill="url(#holeRimGradient)" class="hole-rim" stroke="none" />
+                            <circle r="25" fill="url(#holeInnerGradient)" class="hole-inner" filter="url(#innerShadow)" stroke="none" />
+                        </g>
+                        <g class="bullet-hole-group" transform="translate(45,130)">
+                            <circle r="30" fill="url(#holeRimGradient)" class="hole-rim" stroke="none" />
+                            <circle r="25" fill="url(#holeInnerGradient)" class="hole-inner" filter="url(#innerShadow)" stroke="none" />
+                        </g>
+                        <g class="bullet-hole-group" transform="translate(45,70)">
+                            <circle r="30" fill="url(#holeRimGradient)" class="hole-rim" stroke="none" />
+                            <circle r="25" fill="url(#holeInnerGradient)" class="hole-inner" filter="url(#innerShadow)" stroke="none" />
+                        </g>
                     </g>
-                    <g class="bullet-hole-group" transform="translate(155,70)">
-                        <circle r="30" fill="url(#holeRimGradient)" class="hole-rim" stroke="none" />
-                        <circle r="25" fill="url(#holeInnerGradient)" class="hole-inner" filter="url(#innerShadow)" stroke="none" />
+                    
+                    <!-- Bullet element (initially hidden) -->
+                    <g class="bullet" opacity="0">
+                        <circle r="23" fill="url(#bulletGradient)" class="bullet-body" />
+                        <circle r="23" fill="url(#bulletShineGradient)" class="bullet-shine" />
                     </g>
-                    <g class="bullet-hole-group" transform="translate(155,130)">
-                        <circle r="30" fill="url(#holeRimGradient)" class="hole-rim" stroke="none" />
-                        <circle r="25" fill="url(#holeInnerGradient)" class="hole-inner" filter="url(#innerShadow)" stroke="none" />
-                    </g>
-                    <g class="bullet-hole-group" transform="translate(100,165)">
-                        <circle r="30" fill="url(#holeRimGradient)" class="hole-rim" stroke="none" />
-                        <circle r="25" fill="url(#holeInnerGradient)" class="hole-inner" filter="url(#innerShadow)" stroke="none" />
-                    </g>
-                    <g class="bullet-hole-group" transform="translate(45,130)">
-                        <circle r="30" fill="url(#holeRimGradient)" class="hole-rim" stroke="none" />
-                        <circle r="25" fill="url(#holeInnerGradient)" class="hole-inner" filter="url(#innerShadow)" stroke="none" />
-                    </g>
-                    <g class="bullet-hole-group" transform="translate(45,70)">
-                        <circle r="30" fill="url(#holeRimGradient)" class="hole-rim" stroke="none" />
-                        <circle r="25" fill="url(#holeInnerGradient)" class="hole-inner" filter="url(#innerShadow)" stroke="none" />
-                    </g>
-                </g>
-                
-                <!-- Bullet element (initially hidden) -->
-                <g class="bullet" opacity="0">
-                    <circle r="23" fill="url(#bulletGradient)" class="bullet-body" />
-                    <circle r="23" fill="url(#bulletShineGradient)" class="bullet-shine" />
-                </g>
-                
-                <!-- Center pin with enhanced metallic look -->
-                <circle cx="100" cy="100" r="20" class="chamber-pin" fill="url(#pinGradient)" />
-            </svg>
-        </div>
-        <div class="controls">
-            <button id="spinBtn">Load & Spin Chamber</button>
-            <button id="shootBtn" disabled>Pull Trigger</button>
-        </div>
-        <div class="stats">
-            <p>Shots taken: <span id="shotCount">0</span></p>
-            <p>Survived shots: <span id="surviveCount">0</span></p>
-        </div>
-        <div class="share-buttons">
-            <button onclick="shareOnTwitter()" class="share-button twitter">
-                <svg viewBox="0 0 24 24" width="24" height="24">
-                    <path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                    
+                    <!-- Center pin with enhanced metallic look -->
+                    <circle cx="100" cy="100" r="20" class="chamber-pin" fill="url(#pinGradient)" />
                 </svg>
-                Share on Twitter
-            </button>
-            <button onclick="shareOnFacebook()" class="share-button facebook">
-                <svg viewBox="0 0 24 24" width="24" height="24">
-                    <path fill="currentColor" d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325 1.42-3.592 3.5-3.592.699-.002 1.399.034 2.095.107v2.42h-1.435c-1.128 0-1.348.538-1.348 1.325v1.735h2.697l-.35 2.725h-2.348V21H20a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1z"/>
-                </svg>
-                Share on Facebook
-            </button>
-        </div>
-        <div id="gameOver" class="game-over hidden">
+            </div>
+            <div class="controls" role="group" aria-label="Game controls">
+                <button id="spinBtn" aria-label="Load and spin the chamber">Load & Spin Chamber</button>
+                <button id="shootBtn" disabled aria-label="Pull the trigger">Pull Trigger</button>
+            </div>
+            <div class="stats" aria-live="polite">
+                <p>Shots taken: <span id="shotCount">0</span></p>
+                <p>Survived shots: <span id="surviveCount">0</span></p>
+            </div>
+        </section>
+
+        <section class="share-section">
+            <h2 class="visually-hidden">Share Game</h2>
+            <div class="share-buttons">
+                <button onclick="shareOnTwitter()" class="share-button twitter" aria-label="Share on Twitter">
+                    <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                        <path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                    </svg>
+                    Share on Twitter
+                </button>
+                <button onclick="shareOnFacebook()" class="share-button facebook" aria-label="Share on Facebook">
+                    <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                        <path fill="currentColor" d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325 1.42-3.592 3.5-3.592.699-.002 1.399.034 2.095.107v2.42h-1.435c-1.128 0-1.348.538-1.348 1.325v1.735h2.697l-.35 2.725h-2.348V21H20a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1z"/>
+                    </svg>
+                    Share on Facebook
+                </button>
+            </div>
+        </section>
+
+        <div id="gameOver" class="game-over hidden" role="alert" aria-live="assertive">
             <h2>GAME OVER</h2>
-            <button id="restartBtn">Play Again</button>
+            <button id="restartBtn" aria-label="Start a new game">Play Again</button>
         </div>
-    </div>
+    </main>
 
-    <!-- Audio elements -->
-    <audio id="reloadSound" src="revolver-ejecting-bullets-from-cylinder.wav" preload="auto"></audio>
-    <audio id="spinSound" src="revolver-chamber-spin-ratchet-sound.mp3" preload="auto"></audio>
-    <audio id="emptyShootSound" src="empty-gun-shot.wav" preload="auto"></audio>
-    <audio id="gunshotSound" src="gunshot.mp3" preload="auto"></audio>
+    <footer>
+        <p class="visually-hidden">Sound effects for game interaction</p>
+        <!-- Audio elements -->
+        <audio id="reloadSound" src="revolver-ejecting-bullets-from-cylinder.wav" preload="auto"></audio>
+        <audio id="spinSound" src="revolver-chamber-spin-ratchet-sound.mp3" preload="auto"></audio>
+        <audio id="emptyShootSound" src="empty-gun-shot.wav" preload="auto"></audio>
+        <audio id="gunshotSound" src="gunshot.mp3" preload="auto"></audio>
+    </footer>
 
     <script src="script.js"></script>
 </body>

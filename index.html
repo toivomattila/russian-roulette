@@ -95,35 +95,78 @@
         </div>
         <div class="chamber-container">
             <svg class="chamber" viewBox="0 0 200 200">
-                <!-- Define gradients for better depth -->
                 <defs>
+                    <!-- Main chamber body gradient -->
                     <radialGradient id="chamberGradient" cx="50%" cy="50%" r="50%">
-                        <stop offset="85%" style="stop-color:#444" />
+                        <stop offset="0%" style="stop-color:#555" />
+                        <stop offset="75%" style="stop-color:#444" />
                         <stop offset="100%" style="stop-color:#333" />
                     </radialGradient>
-                    <radialGradient id="holeGradient" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" style="stop-color:#2a2a2a" />
-                        <stop offset="90%" style="stop-color:#222" />
-                        <stop offset="100%" style="stop-color:#1a1a1a" />
+
+                    <!-- Bullet hole outer rim gradient -->
+                    <radialGradient id="holeRimGradient" cx="50%" cy="50%" r="50%">
+                        <stop offset="60%" style="stop-color:#333" />
+                        <stop offset="100%" style="stop-color:#222" />
                     </radialGradient>
-                    <radialGradient id="pinGradient" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" style="stop-color:#777" />
+
+                    <!-- Bullet hole inner gradient -->
+                    <radialGradient id="holeInnerGradient" cx="50%" cy="30%" r="70%">
+                        <stop offset="0%" style="stop-color:#2a2a2a" />
+                        <stop offset="80%" style="stop-color:#1a1a1a" />
+                        <stop offset="100%" style="stop-color:#111" />
+                    </radialGradient>
+
+                    <!-- Center pin metallic gradient -->
+                    <radialGradient id="pinGradient" cx="40%" cy="40%" r="60%">
+                        <stop offset="0%" style="stop-color:#888" />
+                        <stop offset="70%" style="stop-color:#777" />
                         <stop offset="100%" style="stop-color:#666" />
                     </radialGradient>
+
+                    <!-- Inner shadow filter -->
+                    <filter id="innerShadow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+                        <feOffset dx="0" dy="2" />
+                        <feComposite in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowDiff"/>
+                        <feFlood flood-color="#000" flood-opacity="0.75"/>
+                        <feComposite in2="shadowDiff" operator="in"/>
+                        <feComposite in2="SourceGraphic" operator="over"/>
+                    </filter>
                 </defs>
 
-                <!-- Outer circle (chamber body) -->
+                <!-- Main chamber body -->
                 <circle cx="100" cy="100" r="90" class="chamber-body" fill="url(#chamberGradient)" />
                 
                 <!-- Bullet holes with enhanced depth -->
-                <circle cx="100" cy="30" r="20" class="bullet-hole" fill="url(#holeGradient)" />
-                <circle cx="165" cy="65" r="20" class="bullet-hole" fill="url(#holeGradient)" />
-                <circle cx="165" cy="135" r="20" class="bullet-hole" fill="url(#holeGradient)" />
-                <circle cx="100" cy="170" r="20" class="bullet-hole" fill="url(#holeGradient)" />
-                <circle cx="35" cy="135" r="20" class="bullet-hole" fill="url(#holeGradient)" />
-                <circle cx="35" cy="65" r="20" class="bullet-hole" fill="url(#holeGradient)" />
+                <g class="bullet-holes">
+                    <!-- Each bullet hole has an outer rim and inner hole for depth -->
+                    <g class="bullet-hole-group" transform="translate(100,30)">
+                        <circle r="20" fill="url(#holeRimGradient)" class="hole-rim" />
+                        <circle r="16" fill="url(#holeInnerGradient)" class="hole-inner" filter="url(#innerShadow)" />
+                    </g>
+                    <g class="bullet-hole-group" transform="translate(165,65)">
+                        <circle r="20" fill="url(#holeRimGradient)" class="hole-rim" />
+                        <circle r="16" fill="url(#holeInnerGradient)" class="hole-inner" filter="url(#innerShadow)" />
+                    </g>
+                    <g class="bullet-hole-group" transform="translate(165,135)">
+                        <circle r="20" fill="url(#holeRimGradient)" class="hole-rim" />
+                        <circle r="16" fill="url(#holeInnerGradient)" class="hole-inner" filter="url(#innerShadow)" />
+                    </g>
+                    <g class="bullet-hole-group" transform="translate(100,170)">
+                        <circle r="20" fill="url(#holeRimGradient)" class="hole-rim" />
+                        <circle r="16" fill="url(#holeInnerGradient)" class="hole-inner" filter="url(#innerShadow)" />
+                    </g>
+                    <g class="bullet-hole-group" transform="translate(35,135)">
+                        <circle r="20" fill="url(#holeRimGradient)" class="hole-rim" />
+                        <circle r="16" fill="url(#holeInnerGradient)" class="hole-inner" filter="url(#innerShadow)" />
+                    </g>
+                    <g class="bullet-hole-group" transform="translate(35,65)">
+                        <circle r="20" fill="url(#holeRimGradient)" class="hole-rim" />
+                        <circle r="16" fill="url(#holeInnerGradient)" class="hole-inner" filter="url(#innerShadow)" />
+                    </g>
+                </g>
                 
-                <!-- Center pin with gradient -->
+                <!-- Center pin with enhanced metallic look -->
                 <circle cx="100" cy="100" r="10" class="chamber-pin" fill="url(#pinGradient)" />
             </svg>
         </div>

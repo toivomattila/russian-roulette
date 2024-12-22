@@ -18,6 +18,9 @@ A web-based implementation of Russian Roulette using HTML, CSS, and JavaScript. 
   - Successful survival shots
 - Responsive design with a dark theme
 - Simple and intuitive controls
+- Progressive Web App (PWA) support
+- Search Engine Optimization (SEO)
+- Analytics tracking
 
 ## How to Play
 
@@ -39,9 +42,19 @@ The game works best in modern browsers that support:
 - CSS3 Transforms and Transitions
 - SVG
 
-### SEO Files
+### SEO & Social Media
 - `robots.txt` - Directs search engine crawlers and points to the sitemap
 - `sitemap.xml` - Lists all pages for search engine indexing
+- Open Graph meta tags for Facebook sharing
+- Twitter Card meta tags for Twitter sharing
+- Optimized preview images (1200x630)
+
+### PWA Features
+- Installable as a standalone app
+- Offline support
+- App icons in various sizes
+- Custom theme colors
+- Full-screen mode
 
 ## Technical Details
 
@@ -50,6 +63,7 @@ The game is built using:
 - CSS3 for styling and animations
 - JavaScript (ES6+) for game logic
 - SVG for chamber visualization
+- Google Analytics for event tracking
 
 ### File Structure
 ```
@@ -57,6 +71,16 @@ russian-roulette/
 ├── index.html          # Main HTML file
 ├── styles.css          # Styling and animations
 ├── script.js          # Game logic
+├── manifest.json      # PWA configuration
+├── robots.txt         # Search engine directives
+├── sitemap.xml        # Site structure for SEO
+├── preview.jpg        # Social media preview image
+├── favicon.ico        # Browser favicon
+├── favicon-16x16.png  # Small favicon
+├── favicon-32x32.png  # Large favicon
+├── apple-touch-icon.png # iOS home screen icon
+├── android-chrome-192x192.png # Android icon
+├── android-chrome-512x512.png # Large Android icon
 ├── gunshot.mp3        # Fatal shot sound
 ├── empty-gun-shot.wav # Empty chamber sound
 ├── revolver-chamber-spin-ratchet-sound.mp3    # Spinning sound
@@ -73,6 +97,17 @@ git clone https://github.com/toivomattila/russian-roulette.git
 2. Open `index.html` in a modern web browser
 
 Note: The game requires a browser that supports HTML5 audio and modern JavaScript features.
+
+## Analytics
+
+The game tracks various events to improve user experience:
+- Game starts
+- Chamber spins
+- Successful shots
+- Game over events
+- Game restarts
+
+All tracking is anonymous and complies with privacy standards.
 
 ## Deployment
 

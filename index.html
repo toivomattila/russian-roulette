@@ -95,17 +95,36 @@
         </div>
         <div class="chamber-container">
             <svg class="chamber" viewBox="0 0 200 200">
+                <!-- Define gradients for better depth -->
+                <defs>
+                    <radialGradient id="chamberGradient" cx="50%" cy="50%" r="50%">
+                        <stop offset="85%" style="stop-color:#444" />
+                        <stop offset="100%" style="stop-color:#333" />
+                    </radialGradient>
+                    <radialGradient id="holeGradient" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" style="stop-color:#2a2a2a" />
+                        <stop offset="90%" style="stop-color:#222" />
+                        <stop offset="100%" style="stop-color:#1a1a1a" />
+                    </radialGradient>
+                    <radialGradient id="pinGradient" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" style="stop-color:#777" />
+                        <stop offset="100%" style="stop-color:#666" />
+                    </radialGradient>
+                </defs>
+
                 <!-- Outer circle (chamber body) -->
-                <circle cx="100" cy="100" r="90" class="chamber-body" />
-                <!-- Bullet holes -->
-                <circle cx="100" cy="30" r="20" class="bullet-hole" />
-                <circle cx="165" cy="65" r="20" class="bullet-hole" />
-                <circle cx="165" cy="135" r="20" class="bullet-hole" />
-                <circle cx="100" cy="170" r="20" class="bullet-hole" />
-                <circle cx="35" cy="135" r="20" class="bullet-hole" />
-                <circle cx="35" cy="65" r="20" class="bullet-hole" />
-                <!-- Center pin -->
-                <circle cx="100" cy="100" r="10" class="chamber-pin" />
+                <circle cx="100" cy="100" r="90" class="chamber-body" fill="url(#chamberGradient)" />
+                
+                <!-- Bullet holes with enhanced depth -->
+                <circle cx="100" cy="30" r="20" class="bullet-hole" fill="url(#holeGradient)" />
+                <circle cx="165" cy="65" r="20" class="bullet-hole" fill="url(#holeGradient)" />
+                <circle cx="165" cy="135" r="20" class="bullet-hole" fill="url(#holeGradient)" />
+                <circle cx="100" cy="170" r="20" class="bullet-hole" fill="url(#holeGradient)" />
+                <circle cx="35" cy="135" r="20" class="bullet-hole" fill="url(#holeGradient)" />
+                <circle cx="35" cy="65" r="20" class="bullet-hole" fill="url(#holeGradient)" />
+                
+                <!-- Center pin with gradient -->
+                <circle cx="100" cy="100" r="10" class="chamber-pin" fill="url(#pinGradient)" />
             </svg>
         </div>
         <div class="controls">

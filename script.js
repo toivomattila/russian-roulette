@@ -70,9 +70,8 @@ class RussianRoulette {
         
         // Reset bullet position and state
         this.bulletEl.style.transition = 'none';
-        this.bulletEl.style.transform = 'translate(-50px, 100px)';
+        this.bulletEl.style.transform = 'translate(30px, 100px)';
         this.bulletEl.style.opacity = '0';
-        this.bulletEl.classList.remove('bullet-loading', 'bullet-loaded');
         
         // Force reflow to ensure transition reset takes effect
         this.bulletEl.offsetHeight;

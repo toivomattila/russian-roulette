@@ -31,11 +31,23 @@ class RussianRoulette {
         this.chamberEl.addEventListener('transitionend', () => {
             this.chamberEl.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
         });
+
+        // Track game start
+        gtag('event', 'game_start', {
+            'event_category': 'game',
+            'event_label': 'Game Started'
+        });
     }
 
     async spinChamber() {
         this.chamber = Math.floor(Math.random() * 6);
         this.currentPosition = 0;
+        
+        // Track chamber spin
+        gtag('event', 'spin_chamber', {
+            'event_category': 'game',
+            'event_label': 'Chamber Spun'
+        });
         
         // Play reload sound first
         this.reloadSound.currentTime = 0;
@@ -64,11 +76,25 @@ class RussianRoulette {
         this.chamberEl.style.transform = `rotate(${this.currentRotation}deg)`;
 
         if (this.currentPosition === this.chamber) {
+            // Track game over
+            gtag('event', 'game_over', {
+                'event_category': 'game',
+                'event_label': 'Game Over',
+                'value': this.surviveCount
+            });
+            
             // Play gunshot sound for loaded chamber
             this.gunshotSound.currentTime = 0;
             this.gunshotSound.play();
             setTimeout(() => this.gameOver(), 500);
         } else {
+            // Track successful shot
+            gtag('event', 'survive_shot', {
+                'event_category': 'game',
+                'event_label': 'Survived Shot',
+                'value': this.surviveCount + 1
+            });
+            
             // Play empty chamber sound
             this.emptyShootSound.currentTime = 0;
             this.emptyShootSound.play();
@@ -89,6 +115,13 @@ class RussianRoulette {
     }
 
     restart() {
+        // Track game restart
+        gtag('event', 'restart_game', {
+            'event_category': 'game',
+            'event_label': 'Game Restarted',
+            'value': this.surviveCount
+        });
+        
         this.chamber = -1;
         this.currentPosition = 0;
         this.shotCount = 0;

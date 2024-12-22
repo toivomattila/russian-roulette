@@ -18,6 +18,7 @@ class RussianRoulette {
         this.helpBtn = document.getElementById('helpBtn');
         this.helpModal = document.getElementById('helpModal');
         this.closeBtn = document.querySelector('.close-button');
+        this.bulletEl = document.querySelector('.bullet');
 
         // Audio elements
         this.reloadSound = document.getElementById('reloadSound');
@@ -26,7 +27,7 @@ class RussianRoulette {
         this.gunshotSound = document.getElementById('gunshotSound');
 
         // Bind event listeners
-        this.spinBtn.addEventListener('click', () => this.spinChamber());
+        this.spinBtn.addEventListener('click', () => this.loadAndSpin());
         this.shootBtn.addEventListener('click', () => this.shoot());
         this.restartBtn.addEventListener('click', () => this.restart());
         this.helpBtn.addEventListener('click', () => this.showHelp());
@@ -64,6 +65,34 @@ class RussianRoulette {
         }
     }
 
+    async loadAndSpin() {
+        this.spinBtn.disabled = true;
+        
+        // Show bullet loading animation
+        this.bulletEl.style.transform = 'translate(50px, 100px)';
+        this.bulletEl.classList.add('bullet-loading');
+        
+        // Wait for bullet to appear
+        await new Promise(resolve => setTimeout(resolve, 300));
+        
+        // Move bullet to chamber
+        this.bulletEl.classList.add('bullet-loaded');
+        
+        // Wait for bullet to move
+        await new Promise(resolve => setTimeout(resolve, 500));
+        
+        // Play reload sound
+        this.reloadSound.currentTime = 0;
+        await this.reloadSound.play();
+        
+        // Wait for reload sound
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        // Hide bullet and spin chamber
+        this.bulletEl.style.opacity = 0;
+        await this.spinChamber();
+    }
+
     async spinChamber() {
         this.chamber = Math.floor(Math.random() * 6);
         this.currentPosition = 0;
@@ -74,13 +103,6 @@ class RussianRoulette {
             'event_label': 'Chamber Spun'
         });
         
-        // Play reload sound first
-        this.reloadSound.currentTime = 0;
-        await this.reloadSound.play();
-        
-        // Wait for reload sound to finish
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
         // Play spin sound and start animation
         this.spinSound.currentTime = 0;
         this.spinSound.play();
@@ -88,7 +110,6 @@ class RussianRoulette {
         this.currentRotation += 2160; // 6 full rotations
         this.chamberEl.style.transition = 'transform 3s cubic-bezier(0.4, 2, 0.2, 1)';
         this.chamberEl.style.transform = `rotate(${this.currentRotation}deg)`;
-        this.spinBtn.disabled = true;
         
         setTimeout(() => {
             this.shootBtn.disabled = false;
@@ -160,6 +181,11 @@ class RussianRoulette {
         this.spinBtn.disabled = false;
         this.shootBtn.disabled = true;
         this.chamberEl.style.transform = 'rotate(0deg)';
+        
+        // Reset bullet
+        this.bulletEl.style.transform = '';
+        this.bulletEl.classList.remove('bullet-loading', 'bullet-loaded');
+        this.bulletEl.style.opacity = 0;
     }
 }
 

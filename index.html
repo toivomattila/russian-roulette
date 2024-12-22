@@ -132,6 +132,19 @@
                         <feComposite in2="shadowDiff" operator="in"/>
                         <feComposite in2="SourceGraphic" operator="over"/>
                     </filter>
+
+                    <!-- Bullet gradient -->
+                    <radialGradient id="bulletGradient" cx="40%" cy="40%" r="60%">
+                        <stop offset="0%" style="stop-color:#b87333" />
+                        <stop offset="70%" style="stop-color:#a66321" />
+                        <stop offset="100%" style="stop-color:#955310" />
+                    </radialGradient>
+
+                    <!-- Bullet shine gradient -->
+                    <radialGradient id="bulletShineGradient" cx="30%" cy="30%" r="70%">
+                        <stop offset="0%" style="stop-color:rgba(255,255,255,0.6)" />
+                        <stop offset="50%" style="stop-color:rgba(255,255,255,0)" />
+                    </radialGradient>
                 </defs>
 
                 <!-- Main chamber body -->
@@ -164,6 +177,12 @@
                         <circle r="25" fill="url(#holeRimGradient)" class="hole-rim" stroke="none" />
                         <circle r="20" fill="url(#holeInnerGradient)" class="hole-inner" filter="url(#innerShadow)" stroke="none" />
                     </g>
+                </g>
+                
+                <!-- Bullet element (initially hidden) -->
+                <g class="bullet" opacity="0">
+                    <circle r="18" fill="url(#bulletGradient)" class="bullet-body" />
+                    <circle r="18" fill="url(#bulletShineGradient)" class="bullet-shine" />
                 </g>
                 
                 <!-- Center pin with enhanced metallic look -->
